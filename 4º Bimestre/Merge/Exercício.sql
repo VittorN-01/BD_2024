@@ -1,3 +1,5 @@
+-- Para fazer o teste, matricule ao menos 10 alunos em cada turma e aprove 70% dos alunos de cada turma
+
 CREATE DATABASE bdMerge
 USE bdMerge
 -----------EXERCÍCIO---------------
@@ -36,6 +38,11 @@ INSERT INTO tb2B (RM, nomeAluno, status) VALUES
 	(18, 'Sérgio Oliveira', 'Reprovado'),
 	(19, 'Roberta Souza', 'Aprovado'),
 	(20, 'Paulo Barbosa', 'Aprovado');
+
+-- Verificando 
+SELECT * FROM tb2A
+SELECT * FROM tb2B
+
 --------------------------------------------------------
 --- MERGE ---
 --tabela
@@ -67,4 +74,6 @@ ON ori.RM = dest.RM
 	WHEN MATCHED THEN
 		UPDATE SET dest.nomeAluno = ori.nomeAluno, dest.status = ori.status;
 
-		select * from tb3A
+
+-- Verificando
+SELECT * FROM tb3A
